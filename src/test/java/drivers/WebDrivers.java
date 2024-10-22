@@ -23,6 +23,7 @@ public class WebDrivers {
         chromeOptions.addArguments("--disable-notifications");
         chromeOptions.addArguments("--disable-popup-blocking");
         chromeOptions.addArguments("--enable-automation");
+        chromeOptions.addArguments("--headless");
         WebDriver webDriver = new ChromeDriver(chromeOptions);
         allDrivers.add(webDriver);
         currentDriver.set(webDriver);
