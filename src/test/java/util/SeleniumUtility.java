@@ -1,33 +1,33 @@
 package util;
 
 import drivers.WebDrivers;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.Set;
-import java.util.concurrent.TimeUnit;
 
 public class SeleniumUtility {
     public WebDriver driver = null;
     protected WebDriverWait wait;
+    protected FluentWait <WebDriver> fluentWait;
     WebDrivers webDrivers;
     protected Actions actions;
 
     public SeleniumUtility() {
         webDrivers = new WebDrivers();
-
         driver = webDrivers.createAndGetDriver();
         PageFactory.initElements(driver, this);
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
-        driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(60));
         actions = new Actions(driver);
-        wait = new WebDriverWait(driver, 10);
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        fluentWait = new FluentWait<>(driver);
     }
 
     protected void scrollToElementOnVariableHeight(WebElement element) {
@@ -107,4 +107,22 @@ public class SeleniumUtility {
         }
     }
 
+
+    public void setImplicitWait(int timeoutInSeconds) {
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(timeoutInSeconds));
+    }
+
+    protected void waitUntilElementVisible(WebElement element) {
+        wait.until(ExpectedConditions.visibilityOf(element));
+    }
+    protected void waitForClickeableElement(WebElement element) {
+        wait.until(ExpectedConditions.elementToBeClickable(element));
+    }
+
+    protected void fluentWaitForClickeableElement(WebElement element, long timeOut, long interval) {
+        fluentWait
+                .withTimeout(Duration.ofSeconds(timeOut))
+                .pollingEvery(Duration.ofSeconds(interval))
+                .until(ExpectedConditions.elementToBeClickable(element));
+    }
 }

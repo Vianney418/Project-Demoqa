@@ -15,7 +15,7 @@ public class AlertFrameDemoqaStep {
     @And("the user clicks on new tap")
 
     @Then("the user clicks on new tap and should see the text {string}")
-    public void newTabBtn(String txtResultadoEperado) {
+    public void nombreInput(String txtResultadoEperado) {
         Assert.assertEquals(txtResultadoEperado, alertFrameDemoqaPage.newTabBtn());
     }
     @And("the user closes window handle")
