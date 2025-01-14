@@ -4,7 +4,7 @@
 Feature:Check the different elements of the Alert, Frame, and Windows sections.
 
   Scenario: Check the Browser Windows section, New Tap
-    Given user visits Demoqa page "https://demoqa.com/"
+    Given user visits Demoqa page
     When the user goes to Elements
     And the user clicks on Browser Windows
     Then the user clicks on new tap and should see the text "This is a sample page"

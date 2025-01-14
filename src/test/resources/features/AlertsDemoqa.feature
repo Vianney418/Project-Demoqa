@@ -3,7 +3,7 @@
 Feature:Validate the different buttons to generate alerts
 
   Scenario:Validate the different buttons to generate alerts
-    Given user visits Demoqa page "https://demoqa.com/"
+    Given user visits Demoqa page
     When the user goes to Alerts, Frame & Windows
     And the user clicks on Alerts
     And the user click button to see alert and he clicks in aceptar

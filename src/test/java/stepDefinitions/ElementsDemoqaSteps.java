@@ -7,12 +7,15 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.testng.Assert;
 import pages.ElementsDemoqaPage;
+import util.ConfigManager;
 
 public class ElementsDemoqaSteps {
     ElementsDemoqaPage elementsDemoqaPage = new ElementsDemoqaPage();
 
-    @Given("user visits Demoqa page {string}")
-    public void starBrowser(String url) {elementsDemoqaPage.starBrowser(url);}
+    @Given("user visits Demoqa page")
+    public void starBrowser() {
+        String demoqaUrl = ConfigManager.getProperty("url.demoqa");
+        elementsDemoqaPage.starBrowser(demoqaUrl);}
     @When("the user goes to Elements")
     public void userGoesElements() {elementsDemoqaPage.userGoesElements();}
     @And("the user clicks on Text Box")

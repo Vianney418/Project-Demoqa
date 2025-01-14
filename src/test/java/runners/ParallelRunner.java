@@ -14,7 +14,7 @@ import org.testng.annotations.DataProvider;
                 "timeline:test-output-thread/", "json:target/cucumber.json", "html:target/cucumber-reports.html"},
         monochrome = true,
         publish = true,
-        tags = "@Waits"
+        tags =  "@AlertsDemoqa or @ElementsDemoqa or @AlertFrameWindowsDemoqa"
 )
 
 

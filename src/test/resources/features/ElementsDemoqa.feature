@@ -5,7 +5,7 @@
 Feature:Check the different elements of the Demoqa page
 
   Scenario:Check the Text Box section
-    Given user visits Demoqa page "https://demoqa.com/"
+    Given user visits Demoqa page
     When the user goes to Elements
     And the user clicks on Text Box
     And the user fills out the text box form with the following details:

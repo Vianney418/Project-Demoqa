@@ -27,6 +27,7 @@ public class AlertsDemoqaPage extends SeleniumUtility {
     }
 
     public void alertButton() {
+        scrollToElementOnVariableHeight(alertButton);
         alertButton.click();
         Alert alert = driver.switchTo().alert();
         alert.accept();
