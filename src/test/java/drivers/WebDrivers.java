@@ -20,7 +20,7 @@ public class WebDrivers {
         WebDriverManager.chromedriver().setup();
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--incognito");
-        //chromeOptions.addArguments("--headless");
+        //chromeOptions.addArguments("--headless"); //funciona sin interfaz grafica
         chromeOptions.addArguments("--disable-notifications");
         chromeOptions.addArguments("--disable-popup-blocking");
         chromeOptions.addArguments("--enable-automation");
