@@ -125,4 +125,14 @@ public class SeleniumUtility {
                 .pollingEvery(Duration.ofSeconds(interval))
                 .until(ExpectedConditions.elementToBeClickable(element));
     }
+
+    protected void moveElement(WebElement source, WebElement target) {
+        scrollToElementOnVariableHeight(source);
+        actions.clickAndHold(source)
+                .moveToElement(target)
+                .release()
+                .build()
+                .perform();
+    }
+
 }

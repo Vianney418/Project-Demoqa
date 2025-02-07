@@ -21,8 +21,15 @@ public class InteractionsDemoqaSteps {
         interactionsDemoqaPage.clickAndHold();
     }
 
-    /*@Then("the user should see the following text")
-    public void validationTxt() {
-        interactionsDemoqaPage.verifyElementMoved();
-    }*/
+    @Then("the user should see the following text")
+    public void testList() {
+        interactionsDemoqaPage.testList();
+    }
+
+
+    @And("the user clicks on a grid")
+    public void changeSectionGrid(){interactionsDemoqaPage.changeSectionGrid();}
+
+    @And("the user must move the One three squares down")
+    public void clickAndHoldElementGrid(){interactionsDemoqaPage.clickAndHoldElementGrid();}
 }

@@ -6,14 +6,15 @@ Feature:The iterations section is tested
     Given user visits Demoqa page
     When the user goes to Interaction and Sortable
     And the user must move the One three squares down and the Six five squares up
-    #Then the user should see the following text
+    Then the user should see the following text
+# Debes reescribir la prueba!!
 
 
 
 
-
-#  Scenario: Will be tested from the iterations section: Sortable - Grid
-#    Given user visits Demoqa page
-#    When the user goes to Interaction and Sortable
-#    And the user must move the One three squares down and the Six five squares up
+  Scenario: Will be tested from the iterations section: Sortable - Grid
+    Given user visits Demoqa page
+    When the user goes to Interaction and Sortable
+    And the user clicks on a grid
+    And the user must move the One three squares down
 
